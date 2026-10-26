@@ -6,8 +6,6 @@ synthesized for a **Xilinx Artix-7** FPGA.
 
 > This is a custom 8-bit RISC instruction set, not RISC-V (RISC-V's smallest base is 32-bit).
 
-![Full simulation waveform](docs/05_wave_full.jpg)
-
 ---
 
 ## Highlights
@@ -130,16 +128,6 @@ cycles=51  instructions=34  CPI=1.50  load-use stalls=1  taken branches=6  forwa
 
 **Cycle breakdown:** 34 (instructions) + 4 (pipeline fill) + 12 (6 taken branches × 2) + 1 (load-use stall) = **51 cycles**.
 
-### Waveforms
-
-| Forwarding | Branch flush |
-|---|---|
-| ![Forwarding](docs/06_wave_forwarding.jpg) | ![Branch flush](docs/07_wave_branch.jpg) |
-
-| Load-use stall | Halt |
-|---|---|
-| ![Load-use stall](docs/08_wave_stall.jpg) | ![Halt](docs/09_wave_halt.jpg) |
-
 ---
 
 ## Synthesis (Vivado, Artix-7 xc7a35tcpg236-1)
@@ -168,8 +156,10 @@ risc8_5stage/
 │               tb_dump.v (state dump for random regression)
 ├── sw/         program.s (test program), asm8.py (assembler),
 │               iss.py (reference model), random_test.py
-├── docs/       screenshots (simulation, synthesis)
+├── docs/       project report (PDF) and presentation slides (PPTX)
 ├── program.hex machine code loaded by imem.v
+├── create_project.tcl  re-creates the Vivado project
+├── files.f, run_sim.bat, run_sim.sh, sim_log.txt  Icarus Verilog flow
 └── README.md
 ```
 
@@ -179,15 +169,20 @@ risc8_5stage/
 
 ### Vivado (behavioral simulation)
 
-1. Create an **RTL Project** (part `xc7a35tcpg236-1` or any Artix-7).
-2. Add the 7 files in `rtl/` as **design sources** and `tb/tb_risc8_5stage.v` as a **simulation source**.
-3. Add `program.hex` to the project and set its file type to **Memory File**, so Vivado copies it into the simulation and synthesis run directories:
-   ```tcl
-   set_property file_type {Memory File} [get_files program.hex]
-   ```
-4. Set `tb_risc8_5stage` as the simulation top and `risc8_5stage_core` as the design top.
-5. **Run Simulation → Run Behavioral Simulation**. The test stops by itself at 545 ns and prints `*** ALL TESTS PASSED ***` in the Tcl Console.
-6. **Run Synthesis → Report Utilization** to see the resource usage.
+1. Open Vivado and run **Tools → Run Tcl Script...** → `create_project.tcl`.
+   This creates the project in `vivado/` with all sources added, `program.hex` set as a
+   **Memory File**, and the correct top modules selected.
+2. **Run Simulation → Run Behavioral Simulation**. The test stops by itself at 545 ns and prints `*** ALL TESTS PASSED ***` in the Tcl Console.
+3. **Run Synthesis → Report Utilization** to see the resource usage.
+
+### Icarus Verilog (alternative)
+
+```bash
+sh run_sim.sh        # Linux / macOS
+run_sim.bat          # Windows (double-click)
+```
+
+The expected output is in `sim_log.txt`.
 
 ### Changing the program
 
@@ -198,6 +193,13 @@ python3 sw/asm8.py sw/program.s program.hex
 ```
 
 If the program changes, update the expected values in `tb/tb_risc8_5stage.v` (`check_reg(...)`).
+
+---
+
+## Documentation
+
+- [Project report (PDF)](docs/RISC8_5Stage_Pipeline_Report_TranDuy.pdf)
+- [Presentation slides (PPTX)](docs/RISC8_5Stage_Pipeline_Presentation_TranDuy.pptx)
 
 ---
 
