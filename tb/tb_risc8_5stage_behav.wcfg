@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_risc8_5stage_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_risc8_5stage" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="472.700 ns"></ZoomStartTime>
+      <ZoomEndTime time="559.501 ns"></ZoomEndTime>
+      <Cursor1Time time="545.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="248"></NameColumnWidth>
+      <ValueColumnWidth column_width="111"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/tb_risc8_5stage/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/halted" type="logic">
+      <obj_property name="ElementShortName">halted</obj_property>
+      <obj_property name="ObjectShortName">halted</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/pc" type="array">
+      <obj_property name="ElementShortName">pc[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/flags" type="array">
+      <obj_property name="ElementShortName">flags[1:0]</obj_property>
+      <obj_property name="ObjectShortName">flags[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/instr_done" type="logic">
+      <obj_property name="ElementShortName">instr_done</obj_property>
+      <obj_property name="ObjectShortName">instr_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/dut/ifid_instr" type="array">
+      <obj_property name="ElementShortName">ifid_instr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ifid_instr[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/dut/ifid_valid" type="logic">
+      <obj_property name="ElementShortName">ifid_valid</obj_property>
+      <obj_property name="ObjectShortName">ifid_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/dut/memwb_rd" type="array">
+      <obj_property name="ElementShortName">memwb_rd[2:0]</obj_property>
+      <obj_property name="ObjectShortName">memwb_rd[2:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/dut/memwb_data" type="array">
+      <obj_property name="ElementShortName">memwb_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">memwb_data[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/dut/idex_valid" type="logic">
+      <obj_property name="ElementShortName">idex_valid</obj_property>
+      <obj_property name="ObjectShortName">idex_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/dut/exmem_valid" type="logic">
+      <obj_property name="ElementShortName">exmem_valid</obj_property>
+      <obj_property name="ObjectShortName">exmem_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/dut/fwd_a_sel" type="array">
+      <obj_property name="ElementShortName">fwd_a_sel[1:0]</obj_property>
+      <obj_property name="ObjectShortName">fwd_a_sel[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/dut/fwd_b_sel" type="array">
+      <obj_property name="ElementShortName">fwd_b_sel[1:0]</obj_property>
+      <obj_property name="ObjectShortName">fwd_b_sel[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/dut/stall" type="logic">
+      <obj_property name="ElementShortName">stall</obj_property>
+      <obj_property name="ObjectShortName">stall</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/dut/take_branch" type="logic">
+      <obj_property name="ElementShortName">take_branch</obj_property>
+      <obj_property name="ObjectShortName">take_branch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_risc8_5stage/dut/u_rf/r" type="array">
+      <obj_property name="ElementShortName">r[0:7][7:0]</obj_property>
+      <obj_property name="ObjectShortName">r[0:7][7:0]</obj_property>
+   </wvobject>
+</wave_config>

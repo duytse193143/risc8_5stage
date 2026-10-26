@@ -1,0 +1,33 @@
+# ---------------------------------------------------------------
+# Vivado project files (generated automatically, NOT uploaded)
+# Re-create the project with:  create_project.tcl
+# ---------------------------------------------------------------
+*.xpr
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.gen/
+*.srcs/
+vivado/
+.Xil/
+*.jou
+*.log
+*.str
+*.backup.*
+
+# ---------------------------------------------------------------
+# Icarus Verilog / GTKWave outputs
+# ---------------------------------------------------------------
+*.vvp
+*.vcd
+dump.txt
+
+# ---------------------------------------------------------------
+# Python / OS
+# ---------------------------------------------------------------
+__pycache__/
+*.pyc
+desktop.ini
+Thumbs.db
